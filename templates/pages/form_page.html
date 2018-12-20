@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "pages/base.html" %}
+{% block body_block %}
+ 
+<form action="{% url 'users' %}"  method="POST">
+           {{form.as_p}}
+           {% csrf_token %}
+           <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Selects</label>
+                    <div class="col-lg-10">
+                      <select class="form-control" name="select">
+                        <option >Clothing</option>
+                        <option>Toiltries</option>
+                        <option>Footware</option>
+                        <option>Study Material</option>
+                        <option>Grocery</option>
+                      </select>
+           <input type="submit" class="btn btn-primary" value="submit" >
+           </div>
+ </form>
+ {% endblock %}
